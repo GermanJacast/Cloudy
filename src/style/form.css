@@ -1,0 +1,42 @@
+.container-form {
+  position: sticky;
+  width: 100%;
+  text-align: center;
+  top: 4%;
+  z-index: 6;
+}
+.container-input {
+  width: 40%;
+  margin: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.container-input input {
+  width: 100%;
+  padding: 2%;
+  border-radius: 16px;
+  outline: solid 1px var(--primary-color);
+  border: none;
+  font-size: 1em;
+}
+.container-input button {
+  position: absolute;
+  right: 2%;
+  background-color: transparent;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+}
+.container-input button::before {
+  content: "\1F50E";
+}
+.container-input button:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .container-input {
+    width: 60%;
+  }
+}

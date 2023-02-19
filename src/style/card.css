@@ -1,0 +1,206 @@
+.container-wheater {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-shadow: 1px 1px 4px #000;
+}
+.container-wheater hr {
+  border: none;
+}
+.container-card {
+  width: 60%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
+  margin: auto;
+}
+.container-cards {
+  width: 100%;
+  height: 100%;
+}
+/*  */
+.card-actually {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 10%,
+    var(--secondary-color) 100%
+  );
+  width: 41%;
+  height: 72%;
+  border-radius: 16px;
+  text-align: left;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  transition: 0.4s ease-out;
+}
+.card-actually:hover {
+  background: rgba(185, 222, 237, 0.4);
+}
+.card-actually p {
+  font-size: 1em;
+}
+.card-actually .container-title {
+  width: 100%;
+  height: 60%;
+
+  z-index: 4;
+}
+.card-actually .container-title h2 {
+  font-size: 2em;
+  margin: 0;
+}
+.card-actually .container-title h3 {
+  font-size: 1.2em;
+  margin: 1em 0;
+}
+.card-actually .card-content {
+  z-index: 4;
+}
+.card-actually .card-content img {
+  width: 20%;
+}
+.card-actually .card-content h1 {
+  font-size: 3em;
+  margin: 0;
+}
+.card-actually .card-content p::first-letter {
+  text-transform: uppercase;
+}
+
+/*  */
+.card-forescast {
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color) 10%,
+    var(--primary-color) 100%
+  );
+  width: 59%;
+  height: 70%;
+  border-radius: 0 16px 16px 0;
+  text-align: center;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.card-forescast .card-content {
+  width: 98%;
+  margin: 0 0 10% 0;
+
+  z-index: 4;
+}
+.card-forescast .card-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.2em;
+}
+.card-forescast .card-text h3,
+.card-forescast .card-text p {
+  font-size: 1.2em;
+}
+
+/* rest of the day */
+.slider-fore {
+  width: 98%;
+  height: 30%;
+  display: flex;
+  overflow: auto;
+  overflow-y: hidden;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 4;
+}
+.fore-content {
+  width: 100%;
+  padding: 2%;
+  margin: 0 0.6%;
+  border-radius: 16px;
+  background-color: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s all;
+}
+.fore-content:hover {
+  transform: scale(1.1);
+  background-color: var(--primary-color);
+}
+.fore-content .temp {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.card-days {
+  width: 100%;
+  z-index: 4;
+  position: relative;
+}
+/* no data */
+.no-data {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.no-data h2 {
+  font-size: 2em;
+}
+
+@media (max-width: 1024px) {
+  .container-card {
+    width: 90%;
+  }
+}
+@media (max-width: 768px) {
+  .container-card {
+    flex-wrap: wrap;
+    width: 98%;
+  }
+  .card-actually {
+    width: 100%;
+    flex-direction: row;
+    height: auto;
+  }
+  .card-actually .card-content {
+    text-align: right;
+  }
+  .card-forescast {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+  }
+}
+
+.df {
+  display: block;
+}
+.fore {
+  width: 19%;
+  padding: 2%;
+  margin: 2% 0.6%;
+  border-radius: 16px;
+  background-color: var(--secondary-color);
+  display: inline-block;
+  transition: 0.4s all;
+}
+.fore:hover {
+  transform: scale(1.05);
+  background-color: var(--primary-color);
+}
+.fore .temp {
+  font-size: 1.2em;
+  font-weight: 600;
+}

@@ -1,38 +1,111 @@
+/* General */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-size: 16px;
+}
+:root {
+  --primary-color: #b9deed;
+  --secondary-color: #efefef;
+  --light-color: #fff;
+  --dark-color: #000;
+}
+body {
+  user-select: none;
+}
 .App {
-  text-align: center;
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  z-index: -99;
+}
+.light-mode {
+  --primary-color: #b9deed;
+  --secondary-color: #efefef;
+}
+.dark-mode {
+  --primary-color: #252850;
+  --secondary-color: #354e76;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.toggle {
+  width: 10%;
+  position: fixed;
+  right: 4%;
+  top: 4%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  z-index: 10;
 }
-
-.App-link {
-  color: #61dafb;
+.toggle input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
 }
+.toggle input[type="checkbox"]:checked + label:after {
+  left: calc(100% - 32px);
+  /* transform: translateX(-100%); */
+  rotate: 360deg;
+  /* content: "\1F311"; */
+}
+.toggle label {
+  cursor: pointer;
+  width: 95px;
+  height: 35px;
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color) 10%,
+    var(--primary-color) 100%
+  );
+  border-radius: 16px;
+  position: relative;
+  transition: 0.8s;
+}
+.toggle label:hover {
+  border: 1px solid var(--primary-color);
+}
+.toggle label:hover + {
+  border: 1px solid var(--primary-color);
+}
+.toggle label:after {
+  /* content: "\1F323"; */
+  content: "";
+  width: 30px;
+  height: 35px;
+  top: 2px;
+  left: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  /* background: #fff; */
+  border-radius: 16px;
+  transition: 0.8s;
+}
+.toggle input[type="checkbox"]:checked + label span {
+  left: calc(100% - 32px);
+  rotate: 360deg;
+}
+.toggle span {
+  z-index: 1;
+  font-size: 1.5em;
+  width: 30px;
+  height: 35px;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  left: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  border-radius: 40px;
+  transition: 0.8s;
+}
+.none-icon {
+  opacity: 0;
 }

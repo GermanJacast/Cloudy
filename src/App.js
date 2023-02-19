@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import WeatherPanel from './components/WeatherPanel';
+// import { Route, Routes } from 'react-router-dom';
 
 function App() {
+  const [color, setColor] = useState(false);
+  // className={`sch ${stateMonday ? 'none-day' : ''}`.trimEnd()}
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`App ${color ? 'dark-mode' : 'light-mode'}`.trimEnd()}>
+      <div className='toggle'>
+        <input type="checkbox" id="toggle-switch" className='changeColor' onClick={() => setColor(!color)}/>
+        <label htmlFor='toggle-switch'>
+          <span className={`${color ? 'none-icon' : ''}`.trimEnd()}>☀️</span>
+          <span className={`${color ? '' : 'none-icon'}`.trimEnd()}>🌙</span>
+        </label>
+      </div>
+      <WeatherPanel />
+      
+      {/* <li><NavLink onClick={() => changeStateMenu(!stateMenu)} to='/'>Inicio</NavLink></li> */}
+      {/* <Routes>
+        <Route path='/' element={<WeatherPanel/>} />
+        <Route path='*' element={<WeatherPanel/>} />
+      </Routes> */}
     </div>
   );
 }
