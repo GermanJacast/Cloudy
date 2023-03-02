@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/cloudy/static/css/main.7270cd08.css",
+    "main.js": "/cloudy/static/js/main.80abdcf1.js",
+    "static/js/787.8a3e7203.chunk.js": "/cloudy/static/js/787.8a3e7203.chunk.js",
+    "index.html": "/cloudy/index.html",
+    "main.7270cd08.css.map": "/cloudy/static/css/main.7270cd08.css.map",
+    "main.80abdcf1.js.map": "/cloudy/static/js/main.80abdcf1.js.map",
+    "787.8a3e7203.chunk.js.map": "/cloudy/static/js/787.8a3e7203.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7270cd08.css",
+    "static/js/main.80abdcf1.js"
+  ]
+}
