@@ -35,8 +35,9 @@ body {
 
 .toggle {
   width: 10%;
+  height: auto;
   position: fixed;
-  right: 4%;
+  right: 6%;
   top: 4%;
   display: flex;
   align-items: center;
@@ -57,7 +58,7 @@ body {
 .toggle label {
   cursor: pointer;
   width: 95px;
-  height: 35px;
+  height: 34px;
   background: linear-gradient(
     135deg,
     var(--secondary-color) 10%,
@@ -66,6 +67,7 @@ body {
   border-radius: 16px;
   position: relative;
   transition: 0.8s;
+  padding: 3% 0;
 }
 .toggle label:hover {
   border: 1px solid var(--primary-color);
@@ -108,4 +110,19 @@ body {
 }
 .none-icon {
   opacity: 0;
+}
+
+@media (max-width: 830px) {
+  .toggle {
+    top: 2%;
+    margin: 0 2%;
+  }
+  .toggle label {
+    padding: 4% 0;
+    height: 30px;
+  }
+  .toggle span {
+    font-size: 1.2em;
+    height: 30px;
+  }
 }

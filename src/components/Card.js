@@ -44,6 +44,7 @@ const Card = ({loadingData, showData, weather, forecast}) => {
             {
             showData === true ? (
                 <div className='container-cards'>
+                    {/*  */}
                     <div className="container-card">
                         {/* Weather */}
                         <div className="card-actually">
@@ -116,37 +117,50 @@ const Card = ({loadingData, showData, weather, forecast}) => {
                                 {/* </div> */}
                             </div>
                         </div>
+                        <div className='scroll'>
+                            <span className='scroll-down' />
+                        </div>
                     </div>
+                    {/* scroll */}
+
                     {/* Forecast (5 day, i think) */}
                     <div className='card-days'>
-                        <div className='slider-foree'>
-                            {(() => {
-                                const days = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
- 
-                                let daysC = [];                          
-                                for (let i = 5; i <= 39; i++) { 
-                                    const date = new Date(forecast.list[i].dt_txt);
-                                    const dayOfWeek = days[date.getDay()];
-                                    if(forecast.list[i].dt_txt.substring(11, 13) === '00'){
-                                        daysC.push(
-                                            <div className='df'>
-                                                <h3>{dayOfWeek}</h3>
-                                            </div>
-                                        )
-                                    }              
-                                    let dd =  url + forecast.list[i].weather[0].icon + '.png';
-                                    daysC.push(
-                                        <div className="fore">
-                                            <p>{forecast.list[i].dt_txt.substring(8, 10) + '/' + forecast.list[i].dt_txt.substring(5, 7) + '/' + forecast.list[i].dt_txt.substring(0, 4) + ' ' +  forecast.list[i].dt_txt.substring(11, 13)}:00</p>
-                                            <img src={dd} alt="icon" />
-                                            <p className="temp">{(forecast.list[i].main.temp).toFixed(1)}ºC</p>
+                        {(() => {
+                            let daysC = [];
+
+                            for (let i = 5; i <= 39; i++) { 
+                                const date = new Date(forecast.list[i].dt_txt);
+                                // const dayOfWeek = day[date.getDay()];
+                                const dayOfWeek = day[date.getDay()] + ", " + date.getDate() + " de " + month[date.getMonth()];
+                                // + " del " + today.getFullYear();
+                                
+                                if(i === 5){
+                                    // If hours are missing, it is because they are incorporated into the actually forecast
+                                    daysC.push( 
+                                        <div className='df'>
+                                            <h3>{dayOfWeek}</h3>
                                         </div>
-                                    );
+                                    )
                                 }
-                                return daysC;
-                            })()}
-                        </div>  
-                    </div>
+                                else if(forecast.list[i].dt_txt.substring(11, 13) === '00'){
+                                    daysC.push( 
+                                        <div className='df'>
+                                            <h3>{dayOfWeek}</h3>
+                                        </div>
+                                    )
+                                }              
+                                let dd =  url + forecast.list[i].weather[0].icon + '.png';
+                                daysC.push(
+                                    <div className="fore">
+                                        <p>{forecast.list[i].dt_txt.substring(11, 13)}:00</p>
+                                        <img src={dd} alt="icon" />
+                                        <p className="temp">{(forecast.list[i].main.temp).toFixed(1)}ºC</p>
+                                    </div>
+                                );
+                            }
+                            return daysC;
+                        })()}
+                    </div>  
                 </div>
                 ):(
                     <div className='no-data'>
