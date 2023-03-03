@@ -35,13 +35,13 @@ body {
 
 .toggle {
   width: 10%;
-  height: auto;
+  height: 6vh;
   position: fixed;
   right: 6%;
   top: 4%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: right;
   z-index: 10;
 }
 .toggle input[type="checkbox"] {
@@ -58,7 +58,7 @@ body {
 .toggle label {
   cursor: pointer;
   width: 95px;
-  height: 34px;
+  height: 6vh;
   background: linear-gradient(
     135deg,
     var(--secondary-color) 10%,
@@ -67,7 +67,7 @@ body {
   border-radius: 16px;
   position: relative;
   transition: 0.8s;
-  padding: 3% 0;
+  padding: 0 3%;
 }
 .toggle label:hover {
   border: 1px solid var(--primary-color);
@@ -79,7 +79,7 @@ body {
   /* content: "\1F323"; */
   content: "";
   width: 30px;
-  height: 35px;
+  height: 6vh;
   top: 2px;
   left: 2px;
   display: flex;
@@ -98,7 +98,7 @@ body {
   z-index: 1;
   font-size: 1.5em;
   width: 30px;
-  height: 35px;
+  height: 6vh;
 
   left: 2px;
   display: flex;
@@ -114,15 +114,19 @@ body {
 
 @media (max-width: 830px) {
   .toggle {
+    right: 4%;
+    width: 15%;
     top: 2%;
     margin: 0 2%;
   }
-  .toggle label {
-    padding: 4% 0;
-    height: 30px;
-  }
+}
+@media (max-width: 560px) {
   .toggle span {
-    font-size: 1.2em;
-    height: 30px;
+    width: 100%;
+    left: 0;
+  }
+  .toggle input[type="checkbox"]:checked + label span {
+    left: 0;
+    rotate: 360deg;
   }
 }
