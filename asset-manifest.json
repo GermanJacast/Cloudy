@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Cloudy/static/css/main.7270cd08.css",
+    "main.css": "/Cloudy/static/css/main.c9f200fa.css",
     "main.js": "/Cloudy/static/js/main.83f3aacc.js",
     "static/js/787.8a3e7203.chunk.js": "/Cloudy/static/js/787.8a3e7203.chunk.js",
     "index.html": "/Cloudy/index.html",
-    "main.7270cd08.css.map": "/Cloudy/static/css/main.7270cd08.css.map",
+    "main.c9f200fa.css.map": "/Cloudy/static/css/main.c9f200fa.css.map",
     "main.83f3aacc.js.map": "/Cloudy/static/js/main.83f3aacc.js.map",
     "787.8a3e7203.chunk.js.map": "/Cloudy/static/js/787.8a3e7203.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7270cd08.css",
+    "static/css/main.c9f200fa.css",
     "static/js/main.83f3aacc.js"
   ]
 }
