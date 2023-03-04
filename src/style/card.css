@@ -288,15 +288,12 @@
   }
   /*  */
   .scroll {
-    padding: 0%;
+    padding: 2% 0 0;
   }
   .scroll-down {
     border: none;
   }
   /*  */
-  .card-days {
-    padding: 2%;
-  }
   .fore {
     width: fit-content;
     padding: 2% 4%;
